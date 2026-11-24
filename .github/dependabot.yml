@@ -10,6 +10,11 @@ updates:
       # internal gems come from dahogenelst/* via git and move through the CI cascade
       - dependency-name: 'locomotivecms*'
       - dependency-name: custom_fields
+      # deferred on purpose: both change rendered output and need their own migration
+      - dependency-name: liquid
+        update-types: ['version-update:semver-major']
+      - dependency-name: haml
+        update-types: ['version-update:semver-major']
     groups:
       minor-and-patch:
         update-types: [minor, patch]
