@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: meta
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@v3
       - if: steps.meta.outputs.update-type != 'version-update:semver-major'
         env:
           GH_TOKEN: ${{ secrets.CASCADE_TOKEN }}  # a PAT, so the merge push triggers CI and the cascade
