@@ -36,6 +36,8 @@ jobs:
         run: |
           docker cp spec/fixtures/mongodb mongo:/tmp/dump
           docker exec mongo mongorestore --quiet --drop -d steam_test_1_8_x /tmp/dump
+          # specs shell out to mongostat; run the one inside the mongo container
+          printf '#!/bin/sh\nexec docker exec mongo mongostat "$@"\n' | sudo tee /usr/local/bin/mongostat && sudo chmod +x /usr/local/bin/mongostat
       - run: bundle exec rspec
 
   notify-dependents:

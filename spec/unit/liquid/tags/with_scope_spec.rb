@@ -161,7 +161,7 @@ describe Locomotive::Steam::Liquid::Tags::WithScope do
       let(:assigns) { {'list' => ['A', 'B', 'C']} }
       let(:source) { "{% for key in list %}{% with_scope foo: key %}{% assign conditions = with_scope %}{% endwith_scope %}{{ conditions }}{% endfor %}" }
 
-      it { expect(output).to eq '{"foo"=>"A"}{"foo"=>"B"}{"foo"=>"C"}' }
+      it { expect(output).to eq %w(A B C).map { |v| { 'foo' => v }.to_s }.join }  # Hash#inspect format differs per Ruby
 
     end
 
