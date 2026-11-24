@@ -81,7 +81,8 @@ GEM
     execjs (2.10.2)
       json (>= 2)
     flamegraph (0.9.5)
-    haml (6.4.0)
+    haml (7.5.2)
+      prism (>= 1.1.0)
       temple (>= 0.8.2)
       thor
       tilt
@@ -210,7 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   flamegraph
-  haml (~> 6.2)
+  haml (~> 7.5)
   i18n-spec (~> 0.6)
   json_spec (~> 1.1)
   locomotivecms_common!

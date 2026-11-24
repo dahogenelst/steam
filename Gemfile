@@ -14,7 +14,7 @@ group :development do
   gem 'rake'
 
   gem 'puma'
-  gem 'haml',               '~> 6.2'  # haml 7 switches attribute quotes; wagon sites render .liquid.haml, bump together
+  gem 'haml',               '~> 7.5'  # haml 7 switches attribute quotes; wagon sites render .liquid.haml, bump together
 
   gem 'rack', '~> 3.0'
   gem 'rack-mini-profiler'
