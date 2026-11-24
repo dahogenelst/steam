@@ -4,7 +4,7 @@ describe Locomotive::Steam::ExternalAPIService do
 
   pending 'API rate limit exceeded'
 
-  if ENV['TRAVIS'].blank?
+  if ENV['CI'].blank? # hits the live GitHub API, rate limited on shared CI runners
 
     let(:service) { described_class.new }
 
