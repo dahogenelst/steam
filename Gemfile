@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
+gem 'locomotivecms_common', github: 'dahogenelst/common', branch: 'master'
+
 group :development do
   # gem 'locomotivecms_common', github: 'locomotivecms/common', ref: '4d1bd56'
   # gem 'locomotivecms_common', path: '../common'
@@ -11,26 +13,26 @@ group :development do
 
   gem 'rake'
 
-  gem 'puma',               '~> 6.4.0'
-  gem 'haml',               '~> 6.2.3'
+  gem 'puma'
+  gem 'haml',               '~> 6.2'  # haml 7 switches attribute quotes; wagon sites render .liquid.haml, bump together
 
   gem 'rack', '~> 3.0'
-  gem 'rack-mini-profiler', '~> 0.10.1'
+  gem 'rack-mini-profiler'
   gem 'flamegraph'
   gem 'stackprof' # ruby 2.1+ only
   gem 'memory_profiler'
 end
 
 group :test do
-  gem 'rspec',              '~> 3.12.0'
-  gem 'json_spec',          '~> 1.1.5'
-  gem 'i18n-spec',          '~> 0.6.0'
+  gem 'rspec',              '~> 3.13'
+  gem 'json_spec',          '~> 1.1'
+  gem 'i18n-spec',          '~> 0.6'
 
-  gem 'timecop',            '~> 0.9.1'
+  gem 'timecop',            '~> 0.9'
 
-  # gem 'pry-byebug',         '~> 3.3.0'
+  # gem 'pry-byebug',         '~> 3.3'
 
-  gem 'rack-test',          '~> 2.1.0'
+  gem 'rack-test',          '~> 2.1'
 
-  gem 'simplecov',          '~> 0.22.0', require: false
+  gem 'simplecov',          require: false
 end

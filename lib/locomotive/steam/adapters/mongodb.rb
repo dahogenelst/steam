@@ -54,7 +54,7 @@ module Locomotive::Steam
     def make_id(id)
       begin
         BSON::ObjectId.from_string(id)
-      rescue BSON::ObjectId::Invalid
+      rescue BSON::Error::InvalidObjectId
         false
       end
     end
