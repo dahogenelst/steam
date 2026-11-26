@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'nokogiri',               '~> 1.16'
   spec.add_dependency 'sanitize',               '>= 6.0', '< 8'
   spec.add_dependency 'morphine',               '~> 0.1'
-  spec.add_dependency 'httparty',               '~> 0.22'
+  spec.add_dependency 'httparty',               '~> 0.24' # >= 0.24 fixes GHSA-hm5p-x4rq-38w4 (SSRF)
   spec.add_dependency 'chronic',                '~> 0.10'
   spec.add_dependency 'bcrypt',                 '~> 3.1'
   spec.add_dependency 'multi_json',             '~> 1.15'

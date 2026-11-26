@@ -20,7 +20,7 @@ PATH
       dragonfly (~> 1.4)
       duktape (~> 2.0)
       execjs (~> 2.9)
-      httparty (~> 0.22)
+      httparty (~> 0.24)
       kramdown (~> 2.3)
       liquid (~> 4.0)
       locomotivecms_common (~> 0.6.0.alpha1)
