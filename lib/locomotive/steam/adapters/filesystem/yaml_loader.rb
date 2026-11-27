@@ -63,10 +63,10 @@ module Locomotive::Steam
           return {} if  json.blank?
 
           begin
-            MultiJson.load(json).tap do |attributes|
+            JSON.parse(json).tap do |attributes|
               block.call(attributes, template) if block_given?
             end
-          rescue MultiJson::ParseError => e
+          rescue JSON::ParserError => e
             raise Locomotive::Steam::JsonParsingError.new(e, path, json)
           end
         end
