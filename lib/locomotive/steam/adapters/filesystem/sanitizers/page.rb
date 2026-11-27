@@ -161,8 +161,8 @@ module Locomotive::Steam
                 return unless content.is_a?(String)
 
                 begin
-                  page[name][locale] = MultiJson.load(content)
-                rescue MultiJson::ParseError => e
+                  page[name][locale] = content.blank? ? nil : JSON.parse(content)
+                rescue JSON::ParserError => e
                   raise Locomotive::Steam::JsonParsingError.new(e, page.template_path[locale], content)
                 end
               end
