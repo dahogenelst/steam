@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dahogenelst/common.git
-  revision: 780becd05f11e8a6783d3e888cc813046170c0e8
+  revision: d57ddac714050102bbf1a89f58e6041893fae41a
   branch: master
   specs:
     locomotivecms_common (0.6.0.alpha1)
