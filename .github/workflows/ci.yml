@@ -64,8 +64,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.CASCADE_TOKEN }}
         run: |
-          [ -n "$INTERNAL_GEMS" ] || exit 0  # an empty list would make bundler update everything
-          bundle lock --update $INTERNAL_GEMS
+          [ -n "$INTERNAL_GEMS" ] || exit 0  # nothing to bump
+          # bundle lock --update keeps a git gem on its locked revision while its version stays
+          # the same: drop their GIT blocks so that they resolve to the tip of their branch again
+          for gem in $INTERNAL_GEMS; do
+            ruby -e 'g = Regexp.escape(ARGV[0]); File.write("Gemfile.lock", File.read("Gemfile.lock").sub(/^GIT\n(?:  .*\n)+?    #{g} \(.*\n(?:      .*\n)*\n/, ""))' "$gem"
+          done
+          bundle lock
           git diff --quiet Gemfile.lock && exit 0
           # one fixed branch: a later run force-pushes onto the open PR instead of opening a conflicting one
           branch=cascade/bump-internal-gems
