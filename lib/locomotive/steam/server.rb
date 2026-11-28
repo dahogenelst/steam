@@ -1,4 +1,3 @@
-require 'mimetype_fu'
 require 'mime-types'
 require 'mime/types'
 

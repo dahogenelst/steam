@@ -25,7 +25,6 @@ PATH
       liquid (~> 4.0)
       locomotivecms_common (~> 0.6.0.alpha1)
       mime-types (~> 3.5)
-      mimetype-fu (~> 0.1)
       moneta (~> 1.6)
       morphine (~> 0.1)
       nokogiri (~> 1.16)
@@ -112,7 +111,6 @@ GEM
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2026.1103)
-    mimetype-fu (0.1.2)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (6.1.0)

@@ -36,7 +36,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'kramdown',               '~> 2.3'
   spec.add_dependency 'RedCloth',               '~> 4.3'
-  spec.add_dependency 'mimetype-fu',            '~> 0.1'
   spec.add_dependency 'mime-types',             '~> 3.5'
   spec.add_dependency 'duktape',                '~> 2.0'
   spec.add_dependency 'pony',                   '~> 1.12'
